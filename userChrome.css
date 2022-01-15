@@ -1,0 +1,105 @@
+/*
+On a Mac, symlink this into ~/Library/Application Support/Firefox/Profiles/5a6b7cx1.default-release/chrome/userChrome.css
+The random ID before default-release will be different for you.
+You will have to create the chrome directory and the userChrome.css file.
+To tell Firefox to use userChrome.css, follow the instructions here:
+https://www.howtogeek.com/334716/how-to-customize-firefoxs-user-interface-with-userchrome.css/
+You must restart Firefox for changes to this file to take effect.
+*/
+
+/* Remove rounded corners from everything */
+* {
+  border-radius: 0 !important;
+}
+
+/* Adjust menu padding; 4px makes the menus a bit denser */
+menupopup > menuitem, menupopup > menu {
+  padding-block: 4px !important;
+  padding: 4px !important;
+}
+:root {
+  --arrowpanel-menuitem-padding: 4px 8px !important;
+}
+
+/* Make the title bar (containing the tabs and the close/minimize/maximize buttons) dark */
+#titlebar {
+  background-color: #333;
+  /* background: linear-gradient(to bottom, #444 70%, #383838); */
+}
+
+toolbar#nav-bar {
+  --toolbar-bgcolor: linear-gradient(to bottom, #f8f8f8, #e0e0e0);
+}
+
+#urlbar-input-container {
+  border: 1px solid #bbb !important;
+  box-shadow: inset 0 1px 1px #d0d0d0;
+  background: #fff;
+}
+
+#tabbrowser-tabs {
+  color: #fff !important;
+  --tab-selected-bgcolor: #f8f8f8;
+  --toolbarbutton-icon-fill: #ccc;
+}
+
+arrowscrollbox {
+  height: var(--tab-min-height);
+}
+
+/* Format the tabs as tabs instead of floating buttons */
+.tab-background {
+    margin-block: 0 0 !important;
+}
+
+/* Separate tabs with a thin white line */
+.tabbrowser-tab:first-child:not([visuallyselected=true]):not([multiselected=true]) .tab-background {
+  border-left:  1px solid rgba(255, 255, 255, .20) !important;
+}
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+  border-right: 1px solid rgba(255, 255, 255, .20) !important;
+}
+
+/* Give the active tab a blue top border */
+.tabbrowser-tab[selected=true] {
+    border-top: 2px solid #08f !important;
+    background: #f0f0f0;
+}
+
+.tabbrowser-tab[selected=true] .close-icon,
+.tabbrowser-tab[selected=true] .tab-secondary-label,
+.tabbrowser-tab[selected=true] .tab-icon-overlay {
+  color: #000 !important;
+}
+
+/* Remove borders from inactive tabs */
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]) {
+    border-top: none !important;
+}
+
+.tabbrowser-tab:not([visuallyselected="true"], [multiselected]) .close-icon,
+.tabbrowser-tab:not([visuallyselected="true"], [multiselected]) .tab-secondary-label,
+.tabbrowser-tab:not([visuallyselected="true"], [multiselected]) .tab-icon-overlay {
+    color: #fff !important;
+}
+
+/* Inactive tabs have light text */
+.tabbrowser-tab:not([visuallyselected="true"], [multiselected]) .tab-text {
+    color: #fff;
+}
+
+/* Hovering over an inactive tab brightens the background slightly and highlights the close button */
+.tabbrowser-tab:not([visuallyselected=true]):not([multiselected=true]):hover .tab-background {
+    background-color: #4b4b4b !important;
+}
+
+/* Remove padding between tabs */
+.tabbrowser-tab {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Remove space before first unpinned tab */
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
+  margin-inline-start: 0 !important;
+}
