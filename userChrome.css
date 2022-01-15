@@ -24,7 +24,6 @@ menupopup > menuitem, menupopup > menu {
 /* Make the title bar (containing the tabs and the close/minimize/maximize buttons) dark */
 #titlebar {
   background-color: #333;
-  /* background: linear-gradient(to bottom, #444 70%, #383838); */
 }
 
 toolbar#nav-bar {
@@ -61,7 +60,7 @@ arrowscrollbox {
 }
 
 /* Give the active tab a blue top border */
-.tabbrowser-tab[selected=true] {
+.tabbrowser-tab[selected=true] .tab-background {
     border-top: 2px solid #08f !important;
     background: #f0f0f0;
 }
