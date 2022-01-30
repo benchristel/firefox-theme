@@ -36,6 +36,10 @@ toolbar#nav-bar {
   background: #fff;
 }
 
+#urlbar[focused="true"] > #urlbar-background {
+  box-shadow: none !important;
+}
+
 #tabbrowser-tabs {
   color: #fff !important;
   --tab-selected-bgcolor: #f8f8f8;
