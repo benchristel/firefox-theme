@@ -46,10 +46,6 @@ toolbar#nav-bar {
   --toolbarbutton-icon-fill: #ccc;
 }
 
-arrowscrollbox {
-  height: var(--tab-min-height);
-}
-
 /* Format the tabs as tabs instead of floating buttons */
 .tab-background {
     margin-block: 0 0 !important;
