@@ -41,6 +41,7 @@ toolbar#nav-bar {
 }
 
 #tabbrowser-tabs {
+  background: #333;
   color: #fff !important;
   --tab-selected-bgcolor: #f8f8f8;
   --toolbarbutton-icon-fill: #ccc;
