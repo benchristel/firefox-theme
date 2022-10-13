@@ -1,9 +1,16 @@
 /*
-On a Mac, symlink this into ~/Library/Application Support/Firefox/Profiles/5a6b7cx1.default-release/chrome/userChrome.css
-The random ID before default-release will be different for you.
-You will have to create the chrome directory and the userChrome.css file.
-To tell Firefox to use userChrome.css, follow the instructions here:
-https://www.howtogeek.com/334716/how-to-customize-firefoxs-user-interface-with-userchrome.css/
+INSTALLING:
+
+1. Clone this repo.
+2. In Firefox, navigate to about:config and set
+   "toolkit.legacyUserProfileCustomizations.stylesheets" to "true".
+3. Navigate to about:support and find "Profile Folder" or "Profile Directory".
+   Copy the file path.
+4. Create a directory named "chrome" in that directory.
+5. Symlink this file (userChrome.css) into the chrome directory.
+
+Reference: https://www.howtogeek.com/334716/how-to-customize-firefoxs-user-interface-with-userchrome.css/
+
 You must restart Firefox for changes to this file to take effect.
 */
 
