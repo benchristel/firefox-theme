@@ -26,11 +26,13 @@ menupopup > menuitem, menupopup > menu {
 }
 :root {
   --arrowpanel-menuitem-padding: 4px 8px !important;
+  --tabbar-background-gradient: linear-gradient(to bottom, #181818, #4c4c4c);
+  --tabbar-hover-background-gradient: linear-gradient(to bottom, #303030, #505050);
 }
 
 /* Make the title bar (containing the tabs and the close/minimize/maximize buttons) dark */
 #titlebar {
-  background-color: #333;
+  background-color: var(--tabbar-background-gradient);
 }
 
 toolbar#nav-bar {
@@ -48,7 +50,7 @@ toolbar#nav-bar {
 }
 
 #tabbrowser-tabs {
-  background: #333;
+  background: var(--tabbar-background-gradient);
   color: #fff !important;
   --tab-selected-bgcolor: #f8f8f8;
   --toolbarbutton-icon-fill: #ccc;
@@ -97,7 +99,7 @@ toolbar#nav-bar {
 
 /* Hovering over an inactive tab brightens the background slightly and highlights the close button */
 .tabbrowser-tab:not([visuallyselected=true]):not([multiselected=true]):hover .tab-background {
-    background-color: #4b4b4b !important;
+    background: var(--tabbar-hover-background-gradient) !important;
 }
 
 /* Remove padding between tabs */
