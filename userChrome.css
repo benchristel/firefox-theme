@@ -84,14 +84,14 @@ toolbar#nav-bar {
     border-top: none !important;
 }
 
-.tabbrowser-tab:not([visuallyselected="true"], [multiselected]) .close-icon,
-.tabbrowser-tab:not([visuallyselected="true"], [multiselected]) .tab-secondary-label,
-.tabbrowser-tab:not([visuallyselected="true"], [multiselected]) .tab-icon-overlay {
+.tabbrowser-tab:not([selected="true"], [visuallyselected="true"], [multiselected]) .close-icon,
+.tabbrowser-tab:not([selected="true"], [visuallyselected="true"], [multiselected]) .tab-secondary-label,
+.tabbrowser-tab:not([selected="true"], [visuallyselected="true"], [multiselected]) .tab-icon-overlay {
     color: #fff !important;
 }
 
 /* Inactive tabs have light text */
-.tabbrowser-tab:not([visuallyselected="true"], [multiselected]) .tab-text {
+.tabbrowser-tab:not([selected="true"], [visuallyselected="true"], [multiselected]) .tab-text {
     color: #fff;
 }
 
