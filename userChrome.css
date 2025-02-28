@@ -28,6 +28,18 @@ menupopup > menuitem, menupopup > menu {
   --arrowpanel-menuitem-padding: 4px 8px !important;
   --tabbar-background-gradient: linear-gradient(to bottom, #181818, #4c4c4c);
   --tabbar-hover-background-gradient: linear-gradient(to bottom, #303030, #505050);
+
+  /* Set the background and border color of the url bar.
+   * --toolbar-field-background-color and --toolbar-field-border-color
+   * are used by the default Firefox chrome CSS.
+   */
+  --toolbar-field-background-color: #fff !important;
+  --toolbar-field-border-color: #bbb !important;
+
+  /* --chrome-content-separator-color is used e.g. at the border between the
+   * toolbar chrome and the page content.
+   */
+  --chrome-content-separator-color: #e8e8e8 !important;
 }
 
 /* Make the title bar (containing the tabs and the close/minimize/maximize buttons) dark */
@@ -37,12 +49,11 @@ menupopup > menuitem, menupopup > menu {
 
 toolbar#nav-bar {
   background: #f0f0f4 !important;
+  border-bottom: 1px solid var(--chrome-content-separator-color) !important;
 }
 
-#urlbar-input-container {
-  border: 1px solid #bbb !important;
+#urlbar {
   box-shadow: inset 0 1px 1px #d0d0d0;
-  background: #fff;
 }
 
 #urlbar[focused="true"] > #urlbar-background {
