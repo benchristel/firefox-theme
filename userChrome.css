@@ -41,6 +41,9 @@ menupopup > menuitem, menupopup > menu {
    */
   --chrome-content-separator-color: #e8e8e8 !important;
 
+  /* Colors for media icons, e.g. the speaker icon that appears when a tab is
+   * playing audio.
+   */
   --tab-icon-overlay-fill: #000 !important;
   --tab-icon-overlay-stroke: transparent !important;
 }
@@ -71,48 +74,46 @@ toolbar#nav-bar {
     margin-block: 0 0 !important;
 }
 
-/* TODO: remove =true from these attribute selectors.
-   FF's own CSS doesn't use it. */
-.tabbrowser-tab:first-child:not([visuallyselected=true]):not([multiselected=true]):not([selected=true]) {
+.tabbrowser-tab:first-child:not([selected], [visuallyselected], [multiselected]) {
   --tab-icon-overlay-fill: #fff !important;
 }
 
 /* Separate tabs with a thin white line */
-.tabbrowser-tab:first-child:not([visuallyselected=true]):not([multiselected=true]) .tab-background {
+.tabbrowser-tab:first-child:not([selected], [visuallyselected], [multiselected]) .tab-background {
   border-left:  1px solid rgba(255, 255, 255, .20) !important;
 }
-.tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+.tabbrowser-tab:not([selected], [visuallyselected], [multiselected], [beforeselected-visible]) .tab-background {
   border-right: 1px solid rgba(255, 255, 255, .20) !important;
 }
 
 /* Give the active tab a blue top border */
-.tabbrowser-tab[selected=true] .tab-background {
+.tabbrowser-tab:is([selected], [visuallyselected], [multiselected]) .tab-background {
     border-top: 2px solid #08f !important;
     background: #f0f0f4 !important;
 }
 
-.tabbrowser-tab[selected=true] * {
+.tabbrowser-tab:is([selected], [visuallyselected], [multiselected]) * {
   color: #000 !important;
 }
 
 /* Remove borders from inactive tabs */
-.tabbrowser-tab:not([selected=true]):not([multiselected=true]) {
+.tabbrowser-tab:not([selected], [visuallyselected], [multiselected]) {
     border-top: none !important;
 }
 
-.tabbrowser-tab:not([selected="true"], [visuallyselected="true"], [multiselected]) .close-icon,
-.tabbrowser-tab:not([selected="true"], [visuallyselected="true"], [multiselected]) .tab-secondary-label,
-.tabbrowser-tab:not([selected="true"], [visuallyselected="true"], [multiselected]) .tab-icon-overlay {
+.tabbrowser-tab:not([selected], [visuallyselected], [multiselected]) .close-icon,
+.tabbrowser-tab:not([selected], [visuallyselected], [multiselected]) .tab-secondary-label,
+.tabbrowser-tab:not([selected], [visuallyselected], [multiselected]) .tab-icon-overlay {
     color: #fff !important;
 }
 
 /* Inactive tabs have light text */
-.tabbrowser-tab:not([selected="true"], [visuallyselected="true"], [multiselected]) .tab-text {
+.tabbrowser-tab:not([selected], [visuallyselected], [multiselected]) .tab-text {
     color: #fff;
 }
 
 /* Hovering over an inactive tab brightens the background slightly and highlights the close button */
-.tabbrowser-tab:not([selected=true]):not([visuallyselected=true]):not([multiselected=true]):hover .tab-background {
+.tabbrowser-tab:not([selected]):not([visuallyselected]):not([multiselected]):hover .tab-background {
     background: var(--tabbar-hover-background-gradient) !important;
 }
 
