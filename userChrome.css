@@ -40,6 +40,9 @@ menupopup > menuitem, menupopup > menu {
    * toolbar chrome and the page content.
    */
   --chrome-content-separator-color: #e8e8e8 !important;
+
+  --tab-icon-overlay-fill: #000 !important;
+  --tab-icon-overlay-stroke: transparent !important;
 }
 
 /* Make the title bar (containing the tabs and the close/minimize/maximize buttons) dark */
@@ -66,6 +69,12 @@ toolbar#nav-bar {
 /* Format the tabs as tabs instead of floating buttons */
 .tab-background {
     margin-block: 0 0 !important;
+}
+
+/* TODO: remove =true from these attribute selectors.
+   FF's own CSS doesn't use it. */
+.tabbrowser-tab:first-child:not([visuallyselected=true]):not([multiselected=true]):not([selected=true]) {
+  --tab-icon-overlay-fill: #fff !important;
 }
 
 /* Separate tabs with a thin white line */
@@ -116,6 +125,19 @@ toolbar#nav-bar {
 /* Remove space before first unpinned tab */
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
   margin-inline-start: 0 !important;
+}
+
+#tabbrowser-tabs {
+  .tab-icon-overlay {
+    :is(
+      :root[uidensity=compact],
+      #tabbrowser-tabs[secondarytext-unsupported],
+      :root:not([uidensity=compact]) #tabbrowser-tabs:not([secondarytext-unsupported]) .tabbrowser-tab:hover
+    ) .tab-icon-stack[indicator-replaces-favicon] > :not(&),
+    :root:not([uidensity=compact]) #tabbrowser-tabs:not([secondarytext-unsupported]) .tabbrowser-tab:not(:hover) &[indicator-replaces-favicon] {
+      opacity: 1 !important;
+    }
+  }
 }
 
 #alltabs-button {
