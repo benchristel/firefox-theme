@@ -74,7 +74,7 @@ toolbar#nav-bar {
     margin-block: 0 0 !important;
 }
 
-.tabbrowser-tab:first-child:not([selected], [visuallyselected], [multiselected]) {
+.tabbrowser-tab:not([selected], [visuallyselected], [multiselected]) {
   --tab-icon-overlay-fill: #fff !important;
 }
 
