@@ -147,6 +147,10 @@ toolbar#nav-bar {
   }
 }
 
+#tabs-newtab-button {
+  margin-inline-start: 2px !important;
+}
+
 #alltabs-button {
   display: none;
 }
