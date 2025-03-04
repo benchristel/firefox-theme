@@ -58,8 +58,14 @@ toolbar#nav-bar {
   border-bottom: 1px solid var(--chrome-content-separator-color) !important;
 }
 
-#urlbar-background {
-  box-shadow: inset 0 1px 1px #d0d0d0;
+#urlbar-background,
+/* override focus styles from FF's chrome://browser/skin/urlbar-searchbar.css.
+ * FF adds an outset box-shadow to the urlbar when it is focused, which looks
+ * inconsistent with this theme.
+ */
+#urlbar[focused] > #urlbar-background,
+#searchbar:focus-within {
+  box-shadow: inset 0 1px 1px #d0d0d0 !important;
 }
 
 #tabbrowser-tabs {
